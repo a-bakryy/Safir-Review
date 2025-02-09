@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1000;
+            transition: opacity 1s ease-in-out;
+        }
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .hero {
+            padding: 50px;
+            background-color: #007BFF;
+            color: white;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .animated-image {
+            width: 100%;
+            max-width: 300px;
+            animation: scaleAnimation 2s infinite alternate ease-in-out;
+        }
+        
+        @keyframes scaleAnimation {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        
+        .review-links {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .review-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+        }
+        .review-link:hover {
+            color: #0056b3;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.loading-screen').classList.add('fade-out');
+            }, 1000); // Adjust delay if needed
+        };
+    </script>
+</head>
+<body>
+    <div class="loading-screen">
+        <img src="https://www.safirhotels.com/storage/media/Av8Sqq3zUG1x6xt2Q6oww400vfq68XiDCceWiWBj.svg" alt="Loading...">
+    </div>
+    
+    <div class="hero">
+        <h1>Check Our Reviews</h1>
+        <img src="https://www.safirhotels.com/storage/media/Av8Sqq3zUG1x6xt2Q6oww400vfq68XiDCceWiWBj.svg" alt="Review Page" class="animated-image">
+    </div>
+    
+    <div class="review-links">
+        <a href="#" class="review-link"><i class="fab fa-tripadvisor"></i> TripAdvisor</a>
+        <a href="#" class="review-link"><i class="fab fa-google"></i> Google Reviews</a>
+        <a href="#" class="review-link"><i class="fas fa-hotel"></i> TopHotels</a>
+        <a href="#" class="review-link"><i class="fab fa-yelp"></i> Yelp</a>
+        <a href="#" class="review-link"><i class="fas fa-book"></i> Booking.com</a>
+        <a href="#" class="review-link"><i class="fab fa-expedia"></i> Expedia</a>
+        <a href="#" class="review-link"><i class="fas fa-bed"></i> Hotels.com</a>
+        <a href="#" class="review-link"><i class="fas fa-star"></i> Trustpilot</a>
+    </div>
+</body>
+</html>
